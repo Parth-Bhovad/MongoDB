@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(6, 1, 37);
+    color: white;
+}
+
+.input{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(13, 5, 57);
+    margin: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.textarea{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(13, 5, 57);
+    margin: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    color: white;
+}
+
+.submit{
+    background-color: rgb(3, 73, 144);
+    margin: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.users{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user{
+    background-color: rgb(13, 5, 57);
+    width: 15vw;  
+    margin: 10px;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.img{
+    width: 13vw;
+    height: 12vh ;
+    background-color: red;
+    margin: 12px;
+    overflow: hidden;
+}
+
+img{
+    background-size: auto;
+    width: 13vw;
+    height: 12vh ;
+
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.updateBtn{
+    background-color: rgb(255, 201, 8);
+    margin: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: rgb(2, 0, 0);
+}
