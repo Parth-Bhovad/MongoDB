@@ -17,8 +17,8 @@ app.get('/read' , async (req, res) => {
     res.render('read' , {users})
 });
 
-app.get('/delete/:name' , async (req, res) => {
-    const userDelete = await userModel.findOneAndDelete({ name: req.params.name});
+app.get('/delete/:id' , async (req, res) => {
+    const userDelete = await userModel.findOneAndDelete({ _id: req.params.id});
     console.log('working');
      res.send(userDelete);
  });
