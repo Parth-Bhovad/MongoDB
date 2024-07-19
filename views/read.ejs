@@ -10,19 +10,23 @@
     <a href="/">Back to home</a>
     <h1>All User</h1>
          <div class="users">
-          <% users.forEach((user) => { %>
-            <div class="user">
-                <div class="img">
-                    <img src=" <%= user.image %> " alt="">
+         <% if(users.length > 0){ %>
+            <% users.forEach((user) => { %>
+                <div class="user">
+                    <div class="img">
+                        <img src=" <%= user.image %> " alt="">
+                    </div>
+                    <h3> <%= user.name %></h3>
+                    <h5> <%= user.email %></h5>
+                    <div class="links">
+                        <a href="/edit/<%=user._id%>">Edit User</a>
+                        <a href="/delete/<%=user._id%> ">Delete User</a>
+                    </div>
                 </div>
-                <h3> <%= user.name %></h3>
-                <h5> <%= user.email %></h5>
-                <div class="links">
-                    <a href="/edit/<%=user._id%>">Edit User</a>
-                    <a href="/delete/<%=user._id%> ">Delete User</a>
-                </div>
-            </div>
-        <%  }) %>
+            <%  }) %>
+      <%   } else{ %>
+<h3>No users found</h3>
+   <%   } %>
          </div>
 </body>
 </html>
