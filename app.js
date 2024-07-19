@@ -19,8 +19,7 @@ app.get('/read' , async (req, res) => {
 
 app.get('/delete/:id' , async (req, res) => {
     const userDelete = await userModel.findOneAndDelete({ _id: req.params.id});
-    console.log('working');
-     res.send(userDelete);
+     res.redirect('/read');
  });
 
 app.post('/create', async (req, res) => {
@@ -30,7 +29,19 @@ app.post('/create', async (req, res) => {
         image:req.body.image
       });
 
-      res.send(createdUser)
+      res.redirect('/read')
+});
+
+app.get('/edit/:userid' , async (req, res) => {
+    let user = await userModel.findOne({_id:req.params.userid});
+
+    res.render('edit' , {user})
+});
+
+app.post('/update/:userid' , async (req, res) => {
+    let updatedUser = await userModel.findOneAndUpdate({_id:req.params.userid}, {name:req.body.name, email:req.body.email, image:req.body.image}, {new:true});
+
+    res.redirect('/read')
 })
 
 app.listen(3000)
